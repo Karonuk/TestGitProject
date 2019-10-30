@@ -20,9 +20,14 @@ namespace TestShop.UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List <ProductVM> Products { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            Products = new List<ProductVM>();
+            ProductList.ItemsSource = Products;
+            
+
         }
     }
 }
