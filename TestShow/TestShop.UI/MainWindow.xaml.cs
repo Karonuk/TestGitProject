@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestShop.DAL;
 using System.Threading;
+using System.Data.Common;
 
 namespace TestShop.UI
 {
@@ -25,7 +26,8 @@ namespace TestShop.UI
         ProductContext context;
         public List <ProductVM> Products { get; set; }        
         public MainWindow()
-        {           
+        {
+            
             context = new ProductContext();
             InitializeComponent();
             this.Title = "Olexiy";
