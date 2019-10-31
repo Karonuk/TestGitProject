@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestShop.DAL;
+using System.Threading;
 
 namespace TestShop.UI
 {
@@ -24,13 +25,14 @@ namespace TestShop.UI
         ProductContext context;
         public List <ProductVM> Products { get; set; }        
         public MainWindow()
-        {
+        {           
             context = new ProductContext();
-            InitializeComponent();          
+            InitializeComponent();
+            this.Title = "Olexiy";
             var prods = context.Products.ToList();
             Products=prods.Select(x => new ProductVM
             {
-                Name = x.Name,
+                Name = x.Name+"O",
                 Category = x.Category,
                 ID = x.ID,
                 Price = x.Price
